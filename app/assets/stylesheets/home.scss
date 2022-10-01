@@ -1,3 +1,31 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80")
+}
+
+body{
+  background-size: cover
+
+}
+
+
+h3{
+  color:rgb(104, 99, 145)
+}
+
+h2.Main-title{
+  margin-bottom : 10px;
+  font-size:80px;
+  text-align:center;
+  color: rgb(104, 99, 145)
+
+}
+
+h1.subtitle{
+
+ text-align:center;
+  color:rgb(104, 99, 145)
+
+}
