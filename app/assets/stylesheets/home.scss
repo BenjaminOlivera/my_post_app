@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+//globales
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+
 body{
   background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80")
 
@@ -11,6 +21,7 @@ body{
   background-size: cover
 
 }
+
 
 
 .logo a {
@@ -39,13 +50,7 @@ h2.Main-title{
 
 }
 
-h1.subtitle{
-
+.subtitle {
   text-align:center;
-  color:rgb(104, 99, 145)
-
-}
-
-.titles {
-  margin-top: 0px;
+  color: rgb(104, 99, 145)
 }
