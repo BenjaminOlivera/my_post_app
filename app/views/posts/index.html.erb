@@ -1,5 +1,7 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-
-<% post1 = "Doing well at work" %>
-<%= post1%>
+<div class="posts">
+  <%@posts.each do |post|%>
+  <div class="post-index-class">
+  <%= post.content%>
+  </div>
+  <% end %>
+</div>
