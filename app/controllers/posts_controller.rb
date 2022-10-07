@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
+
   end
 
   def show
@@ -11,5 +12,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(content: params[:content])
+    @post.save
+    redirect_to('/posts/index')
+  end
+
+  def edit
+  @post = Post.find_by(id: params[:id])
+  @post.save
+  redirect_to('/posts/index')
   end
 end
