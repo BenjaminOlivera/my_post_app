@@ -11,15 +11,15 @@
   </head>
 
   <body>
-  <header>
-    <div class="header">
-      <div class="logo">
-        <%= link_to('postApp','/')%>
-      </div>
-      <div class="about">
-         <%=link_to('about','about')%>
-      </div>
-    </div>
+  <header class="header">
+    <nav class="nav">
+      <a  class="logo"><%= link_to('postApp','/')%></a>
+        <ul class="nav-menu">
+          <li class="nav">
+            <a class="nav-menu-link"> <%=link_to('about','about')%></a>
+          </li>
+        </ul>
+    </nav>
   </header>
     <%= yield %>
   </body>
