@@ -11,18 +11,23 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-html{
-  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
-}
-body{
-
-}
 
 body{
-  background-size: cover
-
+ font-family: sans-serif;
 }
 
+.top{
+  background-image: url("https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80");
+  background-size: cover;
+}
+
+
+
+.header {
+  background-color:rgb(98, 142, 144)
+
+
+}
 
 
 .logo a {
