@@ -19,6 +19,11 @@
             <a class="nav-menu-link"> <%=link_to('about','about')%></a>
           </li>
         </ul>
+        <% if flash[:notice]%>
+          <div class="flash">
+            <%= flash[:notice]%>
+          </div>
+        <% end %>
     </nav>
   </header>
     <%= yield %>

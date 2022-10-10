@@ -14,7 +14,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(content: params[:content])
     @post.save
+    flash[:notice] = 'Post created successfully'
     redirect_to('/posts/index')
+    render('posts/new')
   end
 
   def edit
@@ -26,6 +28,7 @@ class PostsController < ApplicationController
     @post.content = params[:content]
 
     if @post.save
+      flash[:notice] = "Post was successfully edited"
       redirect_to('/posts/index')
     else
       render('posts/edit')
