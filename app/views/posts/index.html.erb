@@ -1,7 +1,9 @@
-<div class="posts">
-  <%@posts.each do |post|%>
-  <div class="post-index-class">
-  <%= link_to(post.content,"/posts/#{post.id}")%>
+<div class="main posts-index">
+  <div class="container">
+    <%@posts.each do |post|%>
+      <div class="post-index-class">
+        <%= link_to(post.content,"/posts/#{post.id}")%>
+      </div>
+     <% end %>
   </div>
-  <% end %>
 </div>
