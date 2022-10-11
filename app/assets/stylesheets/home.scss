@@ -10,6 +10,7 @@
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -23,10 +24,7 @@ ul, li {
 
 
 
-.top{
-  background-image: url("https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80");
-  background-size: cover;
-}
+
 
 
 
@@ -98,15 +96,51 @@ body{
 
 
 /* Top ================================ */
-h2.Main-title{
+.top .container h2 {
   margin-bottom : 10px;
   font-size:80px;
   text-align:center;
-  color: rgb(104, 99, 145)
+  color:white;
 }
 
-.subtitle {
-  text-align:center;
-  color: rgb(104, 99, 145)
+.top{
+  height: 100vh;
+  background-image:  url("https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80");
+  background-size: cover;
+  h2,h1 {
+    text-align: center;
+    color: white;
+  }
 }
+
+
 /* About ================================ */
+
+.banner-about{
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1000445/pexels-photo-1000445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0px;
+  color:white;
+  text-align: center;
+}
+
+.container-about{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+.container-explanation{
+  text-align: center;
+  color:white;
+}
+
+@media (max-width: 1000px){
+  .container {width:700px;}
+}
+@media (max-width:768px){
+  .container {width: 500px;}
+}
+@media(max-width: 480px){
+  .container { width: 350px;}
+}
