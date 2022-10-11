@@ -11,20 +11,27 @@
   </head>
 
   <body>
-  <header class="header">
-    <nav class="nav">
-      <a  class="logo"><%= link_to('postApp','/')%></a>
-        <ul class="nav-menu">
-          <li class="nav">
-            <a class="nav-menu-link"> <%=link_to('about','about')%></a>
-          </li>
-        </ul>
+  <header>
+    <div class="header-logo">
+        <%= link_to("TweetApp", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("About", "/about") %>
+        </li>
+        <li>
+          <%= link_to("Posts", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("New post", "/posts/new") %>
+        </li>
+      </ul>
         <% if flash[:notice]%>
           <div class="flash">
             <%= flash[:notice]%>
           </div>
         <% end %>
-    </nav>
+    </div>
   </header>
     <%= yield %>
   </body>
