@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  validates :email, {uniqueqness: true}
+  validates :email, { uniqueness: true }
 end
