@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'Post created successfully created'
       redirect_to('/posts/index')
     else
-      render('posts/new') # renders co after else
+      render('posts/new') # renders goes after else
     end
   end
 
