@@ -1,7 +1,7 @@
 
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">Create a new post</h1>
+    <h1 class="form-heading">What is your story?</h1>
     <%=form_tag("/posts/create") do %>
       <div class="form">
         <div class="form-body">
@@ -12,7 +12,7 @@
             <% end %>
 
           <textarea name="content"><%= @post.content%></textarea>
-          <input type="submit" value="Post">
+          <input class="post-button" type="submit" value="Post">
         </div>
       </div>
     <% end %>
