@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show'
   get 'users/:id/edit' => 'users#edit'
+  posts 'users/:id' => 'users#new'
+  posts 'users/:id/delete' => 'users#delete'
 
 
 
