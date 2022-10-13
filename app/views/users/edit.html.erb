@@ -9,6 +9,13 @@
             </div>
           <% end %>
 
+          <%= form_tag("/users/#{user.id}/update") do %>
+            <p>Name</p>
+            <input name="name" value="<%=@user.name%>">
+            <p>Email</p>
+            <input name="email" value="<%=@user.email%>">
+            <input type="submit" value="Save">
+          <% end %>
         </div>
       </div>
     </div>
