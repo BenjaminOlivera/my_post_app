@@ -15,9 +15,9 @@ class UsersController < ApplicationController
     @user = User.new(name: params[:name], email: params[:email])
     if @user.save
       flash[:notice] = "You have signed up successfully"
-      redirect_to()
+      redirect_to("/users/#{@user.id}/")
     else
-
+    render('users/new')
     end
   end
 
@@ -29,7 +29,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
-
+    if @user.save
+      flash[:notice] = "Your account has been updated successfully"
+      redirect_to("/users/#{@user.id}/")
+    else
+      render('users/edit')
+    end
   end
 
 
