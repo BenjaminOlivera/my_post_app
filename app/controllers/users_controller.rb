@@ -4,20 +4,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def new
-    @user = User.new(id: params[:id])
+    @user = User.new
   end
 
   def create
     @user = User.new(name: params[:name], email: params[:email])
     if @user.save
       flash[:notice] = "You have signed up successfully"
-      redirect_to("/users/#{@user.id}/")
+      redirect_to("/users/#{@user.id}")
     else
-    render('users/new')
+      render('users/new')
     end
   end
 
@@ -31,11 +31,9 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     if @user.save
       flash[:notice] = "Your account has been updated successfully"
-      redirect_to("/users/#{@user.id}/")
+      redirect_to("/users/#{@user.id}")
     else
       render('users/edit')
     end
   end
-
-
 end
