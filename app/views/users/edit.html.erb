@@ -1,6 +1,6 @@
 <div class="main users-edit">
   <div class="container">
-    <div class="form-heading">
+    <div class="form-heading"> Edit Account </div>
       <div class="form-users-form">
         <div class="form-body">
           <%@user.errors.full_messages.each do |message|%>
@@ -12,12 +12,12 @@
           <%= form_tag("/users/#{@user.id}/update") do %>
             <p>Name</p>
             <input name="name" value="<%=@user.name%>">
+            <input name="image" value="file">
             <p>Email</p>
             <input name="email" value="<%=@user.email%>">
-            <input type="submit" value="Save">
+            <input class= "principal-button" type="submit" value="Save">
           <% end %>
         </div>
       </div>
-    </div>
   </div>
 </div>

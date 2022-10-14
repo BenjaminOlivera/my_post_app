@@ -1,6 +1,6 @@
 <div class="main users-new">
   <div class="container">
-    <div class="form-heading">
+    <div class="form-heading">Sign up</div>
       <div class="form users-form">
         <div class="form-body">
           <%@user.errors.full_messages.each do |message| %>
@@ -14,10 +14,9 @@
             <input name="name" value="<%= @user.name %>">
             <p>Email</p>
             <input name="email" value="<%= @user.email%>">
-            <input type="sunbmit" value="Sign up">
+            <input class="principal-button" type="submit" value="Sign up">
           <% end %>
         </div>
       </div>
-    </div>
   </div>
 </div>
