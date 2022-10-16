@@ -28,6 +28,8 @@ class UsersController < ApplicationController
   def login_form
   end
 
+  def login
+  end
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
