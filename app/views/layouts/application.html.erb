@@ -13,13 +13,16 @@
   <body>
   <header>
     <div class="header-logo">
+      <% if @current_user %>
+        <%= link_to("postApp", "/posts/index")%>
+      <% else %>
         <%= link_to("postApp", "/") %>
+      <% end %>
       </div>
       <ul class="header-menus">
-        <% if session[:user_id] %>
+        <% if @current_user %>
           <li>
-            Your ID is :
-            <%= session[:user_id] %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}")%>
           </li>
           <li>
             <%= link_to("Posts", "/posts/index") %>
@@ -31,7 +34,7 @@
             <%= link_to("Users", "/users/index")%>
           </li>
           <li>
-            <%= link_to("Log out","/login") %>
+            <%= link_to("Log out","/logout", {method: :post}) %>
           </li>
         <% else %>
           <li>
