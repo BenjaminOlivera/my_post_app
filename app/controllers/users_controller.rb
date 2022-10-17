@@ -34,6 +34,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'You have logged in successfully'
       redirect_to('/posts/index')
     else
+      @error_message = 'invalid email/password combination'
       render('users/login_form')
     end
   end
