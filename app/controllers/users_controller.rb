@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(name: params[:name], email: params[:email], image_name: params[:image_name])
     if @user.save
-      flash[:notice] = "You have signed up successfully"
+      flash[:notice] = 'You have signed up successfully'
       redirect_to("/users/#{@user.id}")
     else
       render('users/new')
@@ -29,7 +29,15 @@ class UsersController < ApplicationController
   end
 
   def login
+    @user = User.find_by(email: params[:email], password: params[:password])
+    if @user
+      flash[:notice] = 'You have logged in successfully'
+      redirect_to('/posts/index')
+    else
+      render('users/login_form')
+    end
   end
+
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
