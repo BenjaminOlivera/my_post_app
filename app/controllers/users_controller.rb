@@ -12,8 +12,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name: params[:name], email: params[:email], image_name: params[:image_name])
+    @user = User.new(
+      name: params[:name],
+      email: params[:email],
+      image_name: 'default_user.jpg',
+      password: params[:password]
+    )
     if @user.save
+      session[:user_id] = @user.id # make a user logged in after signing up
       flash[:notice] = 'You have signed up successfully'
       redirect_to("/users/#{@user.id}")
     else
@@ -38,6 +44,12 @@ class UsersController < ApplicationController
       @error_message = 'invalid email/password combination'
       render('users/login_form')
     end
+  end
+
+  def logout
+    session[:user_id] = nil # remove the login session by assigning nil
+    flash[:notice] = 'You have logged out successfully'
+    redirect_to('/login')
   end
 
   def update

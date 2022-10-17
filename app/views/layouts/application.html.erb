@@ -16,24 +16,34 @@
         <%= link_to("postApp", "/") %>
       </div>
       <ul class="header-menus">
-        <li>
-          <%= link_to("About", "/about") %>
-        </li>
-        <li>
-          <%= link_to("Posts", "/posts/index") %>
-        </li>
-        <li>
-          <%= link_to("New post", "/posts/new") %>
-        </li>
-        <li>
-          <%= link_to("Users", "/users/index")%>
-        </li>
-        <li>
-          <%= link_to("Sign up", "/signup")%>
-        </li>
-        <li>
-          <%= link_to("Log in", "/login") %>
-        </li>
+        <% if session[:user_id] %>
+          <li>
+            Your ID is :
+            <%= session[:user_id] %>
+          </li>
+          <li>
+            <%= link_to("Posts", "/posts/index") %>
+          </li>
+          <li>
+            <%= link_to("New post", "/posts/new") %>
+          </li>
+          <li>
+            <%= link_to("Users", "/users/index")%>
+          </li>
+          <li>
+            <%= link_to("Log out","/login") %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to("About", "/about") %>
+          </li>
+          <li>
+            <%= link_to("Sign up", "/signup")%>
+          </li>
+          <li>
+            <%= link_to("Log in", "/login") %>
+          </li>
+        <% end %>
       </ul>
   </header>
   <% if flash[:notice] %>
