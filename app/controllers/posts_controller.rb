@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user
+
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -8,6 +10,10 @@ class PostsController < ApplicationController
   end
 
   def new
+    if @user == nil
+      flash[:notice] = 'You must be logged in '
+      redirect_to('/login')
+    end
     @post = Post.new
   end
 
