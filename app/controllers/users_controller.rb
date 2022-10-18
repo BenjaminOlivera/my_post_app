@@ -45,6 +45,8 @@ class UsersController < ApplicationController
       redirect_to('/posts/index')
     else
       @error_message = 'Invalid email/password combination'
+      @email = params[:email]
+      @password = params[:password]
       render('users/login_form')
     end
   end

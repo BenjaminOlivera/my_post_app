@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
+  before_action :ensure_correct_user, { only: [:edit, :update, :destroy] }
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -7,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @user = @post.user
   end
 
   def new
@@ -14,9 +16,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(content: params[:content], user_id: @current_user.id)
     if @post.save
-      flash[:notice] = 'Post created successfully created'
+      flash[:notice] = 'Post  successfully created'
       redirect_to('/posts/index')
     else
       render('posts/new') # renders goes after else
