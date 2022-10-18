@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, { only: [:edit, :update] }
   before_action :forbid_login_user, { only: [:new, :create, :login_form, :login] }
+  before_action :ensure_correct_user, { only: [:edit, :update] }
   def index
     @users = User.all
   end
@@ -70,6 +71,13 @@ class UsersController < ApplicationController
       redirect_to("/users/#{@user.id}")
     else
       render('users/edit')
+    end
+  end
+
+  def ensure_correct_user
+    if @current_user != params[:id].to_i
+      flash[:notice] = "Unauthorized access "
+      redirect_to("/posts/index")
     end
   end
 end
