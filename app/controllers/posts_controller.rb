@@ -10,10 +10,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    if @user == nil
-      flash[:notice] = 'You must be logged in '
-      redirect_to('/login')
-    end
     @post = Post.new
   end
 
