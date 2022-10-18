@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
-      File.binwrite("public/#{@user.image_name}", image.read)
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
 
     if @user.save
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
   end
 
   def ensure_correct_user
-    if @current_user != params[:id].to_i
+    if @current_user.id != params[:id].to_i
       flash[:notice] = "Unauthorized access "
       redirect_to("/posts/index")
     end
