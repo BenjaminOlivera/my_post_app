@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   def ensure_correct_user
     @post= Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id
-      flash[:notice] ="Unauthorized access"
+      flash[:notice] = "Unauthorized access"
       redirect_to('/posts/index')
     end
   end
