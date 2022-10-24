@@ -1,0 +1,21 @@
+.tool-icon{
+  width:25%;
+  position: relative;
+  top: 50px;
+  left: 70px;
+
+  img{
+    height:auto;
+    width:auto;
+    max-height: 300px;
+    max-width: 300px;
+    float : 0;
+  }
+}
+
+.contents{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
