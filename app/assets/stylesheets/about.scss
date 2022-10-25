@@ -1,21 +1,25 @@
-.tool-icon{
-  width:25%;
-  position: relative;
-  top: 50px;
-  left: 70px;
-
-  img{
-    height:auto;
-    width:auto;
-    max-height: 300px;
-    max-width: 300px;
-    float : 0;
-  }
-}
-
 .contents{
   display:flex;
   justify-content: center;
   align-items: center;
+  padding-right: 40px;
 
 }
+
+.tool{
+  padding-right: 40px;
+}
+.tool-icon{
+  padding-top: 40px;
+}
+  img{
+    height:auto;
+    width:auto;
+    max-height: 300px;
+    max-height: 200px;
+    float : 0;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    margin: auto;
+  }
